@@ -22,8 +22,6 @@ if client.login('username', 'password'):
 
     # Client is ready, do stuff
 
-# Client is ready, do stuff
-
 
 # Option 2: Load & import account
 # Load account object (e.g. Read from file)
