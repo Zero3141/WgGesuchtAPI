@@ -27,6 +27,8 @@ The client is now ready to use
 Endpoints can only be used with valid session. As described in Re-use session, the accessToken is refreshed if required in every request.
 |Method|Parameters|Response|
 |------|----------|--------|
+|login|username: str, password: str|True|
+|refreshToken|-|True|
 |myProfile|-|Profile json object|
 |findCity|query: str| City array|
 |offers|cityId: str, categories: str, maxRent: str, minSize: str, page: str = '1'| Offers array|
