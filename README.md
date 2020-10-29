@@ -36,3 +36,8 @@ Endpoints can only be used with valid session. As described in Re-use session, t
 |conversationDetail|conversationId: str|Conversation object|
 
 If a request failes, False is returned.
+
+### Examples
+Sample usages are located in examples folder:
+  - Authentication in `authExample.py`
+  - Offer in `offerExample.py`
