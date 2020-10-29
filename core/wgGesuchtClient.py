@@ -198,7 +198,7 @@ class WgGesuchtClient:
             return False
 
     # Offers list
-    def offers(self, cityId: str, categories: str, maxRent: str, minSize: str):
+    def offers(self, cityId: str, categories: str, maxRent: str, minSize: str, page: str = '1'):
         
         # Build url
         url = 'asset/offers/'.format(self.userId)
@@ -213,8 +213,8 @@ class WgGesuchtClient:
             'limit': '20',
             'rMax': maxRent, # in €
             'sMin': minSize, # in m^2
-            'rent_types': '0,1,2,3', # Same as categories?!?
-            'page': '1'
+            'rent_types': categories, # Same as categories?!?
+            'page': page
         }
 
         # Request api
@@ -282,14 +282,14 @@ class WgGesuchtClient:
             return False
 
     # Conversations list
-    def conversations(self):
+    def conversations(self, page: str = '1'):
 
         # Build url
         url = 'conversations/user/{}'.format(self.userId)
 
         # Build params
         params = {
-            'page': '1',
+            'page': page,
             'limit': '25',
             'language': 'de',
             'filter_type': '0'
@@ -310,7 +310,7 @@ class WgGesuchtClient:
             return False
 
     # Conversations detail
-    def conversationDetail(self, conversationId):
+    def conversationDetail(self, conversationId: str):
 
         # Build url
         url = 'conversations/{}/user/{}'.format(conversationId, self.userId)
